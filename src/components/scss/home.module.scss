@@ -1,11 +1,32 @@
 .input {
   margin: 100px auto;
-  width: 850px;
+  height: 25px;
   text-align: center;
+  padding: 5px;
+  width: 800px;
+  box-sizing: border-box;
+  text-decoration-color: white;
 
 }
 
 .send {
-  padding-top: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+  width: 700px;
+  size: 50px;
+}
+
+.main {
+  margin: 50px auto;
+  height: 25px;
+  text-align: center;
+  padding: 3px;
+  width: 700px;
+  box-sizing: border-box;
+
+}
+
+.home {
+
 
 }
