@@ -1,35 +1,62 @@
-.input {
-  margin: 100px auto;
-  height: 25px;
-  text-align: center;
-  padding: 5px;
-  width: 800px;
-  box-sizing: border-box;
-  border-radius: 10px;
+.box {
+  margin: 0 auto;
+  max-width: 700px;
+}
 
+.input {
+  margin: 5px 0;
+  width: 100%;
+  background-color: white;
+  border-radius: 15px;
 
 }
 
-.send {
-  margin: 10px auto;
-  padding: 5px;
-  box-sizing: border-box;
-  width: 700px;
-  size: 50px;
+.description {
+  margin: 5px 0;
+  width: calc(100% - 6px);
+  border-radius: 15px;
+}
+
+.add {
+  margin: 10px 0 10px 300px;
+  position: absolute;
 }
 
 .main {
   margin: 50px auto;
-  height: 25px;
-  text-align: center;
-  padding: 3px;
   width: 700px;
-  box-sizing: border-box;
+  h2 {
+    margin-left: 220px;
+    color: #ff8c05
+  }
 
 }
 
-.text {
-padding-bottom: 3px;
-
+.list {
+  padding: 0;
+  border-radius: 15px;
+  li {
+    list-style-type: none;
+  }
 }
 
+.buttonsTodo {
+  .editButton {
+    margin-left: 45px;
+  }
+
+  .doneButton {
+    color: green;
+    margin: 25px
+  }
+
+  .deleteButton {
+    color: red;
+  }
+}
+
+.home {
+  padding-top: 50px;
+  min-height: 100vh;
+  background-image: url("https://thumbs.dreamstime.com/b/%D0%BF%D1%83%D1%81%D1%82%D1%8B%D0%B5-%D1%82%D0%B5%D1%82%D1%80%D0%B0-%D1%8C-%D0%B8-%D0%BA%D0%B0%D1%80%D0%B0%D0%BD-%D0%B0%D1%88-%D1%81-%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%BE%D0%BC-todo-80961776.jpg");
+}
