@@ -4,9 +4,28 @@ import SendIcon from '@mui/icons-material/Send';
 import Button from '@mui/material/Button';
 import styles from '../../scss/home.module.scss'
 import {TextareaAutosize} from "@mui/material";
+import {useState} from "react";
 
 
 const AddTodoForm = () => {
+     const [title, setTitle] = useState();
+     const [text, setText] = useState();
+    //
+    // const on = async () => {
+    //     const res = await axios.put('http://localhost:3001/todo');
+    //     setAddTitle(res.data)
+    // }
+    //
+    // const onEdit = async () => {
+    //     const res = await axios.put('http://localhost:3001/todo');
+    //     setAddText(res.data)
+    // }
+
+    const handleClick = (event: { currentTarget: { disabled: boolean; }; }) => {
+        event.currentTarget.disabled = true;
+        console.log('button clicked');
+    };
+
     return (
         <div className={styles.box}>
             <div>
@@ -19,7 +38,7 @@ const AddTodoForm = () => {
                     placeholder="Add text"
                     ></TextareaAutosize>
             </div>
-            <div className={styles.add}><Button variant="contained" endIcon={<SendIcon/>}>
+            <div className={styles.add}><Button disabled={!title} variant="contained" endIcon={<SendIcon/>}>
                 Add
             </Button>
             </div>
