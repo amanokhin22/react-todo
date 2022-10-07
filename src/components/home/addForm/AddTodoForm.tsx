@@ -7,38 +7,40 @@ import {TextareaAutosize} from "@mui/material";
 import {useState} from "react";
 
 
-const AddTodoForm = () => {
-     const [title, setTitle] = useState();
-     const [text, setText] = useState();
-    //
-    // const on = async () => {
-    //     const res = await axios.put('http://localhost:3001/todo');
-    //     setAddTitle(res.data)
-    // }
-    //
-    // const onEdit = async () => {
-    //     const res = await axios.put('http://localhost:3001/todo');
-    //     setAddText(res.data)
-    // }
+const AddTodoForm: React.FC = () => {
+     const [title, setTitle] = useState('')
+     const [text, setText] = useState('')
 
-    const handleClick = (event: { currentTarget: { disabled: boolean; }; }) => {
-        event.currentTarget.disabled = true;
-        console.log('button clicked');
-    };
+     const handleChangeTitle = (event: React.ChangeEvent<HTMLInputElement>) => {
+         setTitle(event.target.value);
+         console.log('value', event.target.value)
+     }
+
+    const handleChangeText = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setText(event.target.value);
+        console.log('value', event.target.value)
+    }
+
+     const handleClick = (event: React.UIEvent) => {
+         event.preventDefault();
+         console.log(title, text);
+         setTitle('');
+         setText('');
+     }
 
     return (
         <div className={styles.box}>
-            <div>
-                <TextField className={styles.input} label="Add title"/>
+            <div >
+                <TextField value={title} onChange={handleChangeTitle} className={styles.input} label="Add title"/>
             </div>
             <div>
-                <TextareaAutosize className={styles.description}
+                <TextareaAutosize value={text} onChange={handleChangeText} className={styles.description}
                     minRows={4}
                     aria-label="maximum height"
                     placeholder="Add text"
                     ></TextareaAutosize>
             </div>
-            <div className={styles.add}><Button disabled={!title} variant="contained" endIcon={<SendIcon/>}>
+            <div className={styles.add}><Button onClick={handleClick} variant="contained" endIcon={<SendIcon/>}>
                 Add
             </Button>
             </div>

@@ -2,34 +2,6 @@
   "todo": [
     {
       "userId": 1,
-      "id": 1,
-      "title": "Nec nostri saeculi est",
-      "completed": false,
-      "description": "Quae medicamenta non sanat, ferrum sanat; Quae ferrum non sanat, ignis sanat. Quae vero ignis non sanat, insanabilia reputari oportet "
-    },
-    {
-      "userId": 1,
-      "id": 2,
-      "title": "Nemo debet esse judex in propria causa",
-      "completed": false,
-      "description": "Quis? Quid? Ubi? Quibus auxiliis? Cur? Quomodo? Quando? "
-    },
-    {
-      "userId": 1,
-      "id": 3,
-      "title": "A dato",
-      "completed": false,
-      "description": "A maximis ad minima"
-    },
-    {
-      "userId": 1,
-      "id": 4,
-      "title": "et porro tempora",
-      "completed": true,
-      "description": "A nescire ad non esse "
-    },
-    {
-      "userId": 1,
       "id": 5,
       "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
       "completed": false,

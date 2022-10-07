@@ -18,28 +18,31 @@ export interface Todo {
 }
 
 const MainTodo = () => {
-    const [todo, setTodo] = useState<Todo[]>([]);
+    const [todoList, setTodoList] = useState<Todo[]>([]);
 
     useEffect(() => {
         axios.get('http://localhost:3001/todo').then(res => {
             console.log(res)
-            return setTodo(res.data)
+            return setTodoList(res.data)
         }).catch(error => {
             console.log(error)
         })
     }, []);
 
     const onDelete = (todo: Todo) => async () => {
-        console.log(todo)// Удалить туду (документация JSON-server). Загрузить снова туду и обновить через setTodo
-        const res = await axios.delete(`http://localhost:3001/todo/${todo.id}`);
-        await setTodo(res.data);
+        console.log(todo)
+        await axios.delete(`http://localhost:3001/todo/${todo.id}`);
+        const res = await axios.get('http://localhost:3001/todo')
+        setTodoList(res.data);
+        //setTodoList(todoList.filter(t => t.id !== todo.id))
         console.log(todo)
     }
 
-    const onEdit = (todo: Todo) => async () => {
+    const onToggle = (todo: Todo) => async () => {
         console.log(todo)
-        const res = await axios.put(`http://localhost:3001/todo/${todo.id}`, todo );
-        setTodo(res.data)
+        await axios.put(`http://localhost:3001/todo/${todo.id}`, {...todo, completed : !todo.completed  } );
+        const res = await axios.get('http://localhost:3001/todo')
+        setTodoList(res.data);
     }
 
 
@@ -48,7 +51,7 @@ const MainTodo = () => {
             <h2>'The main list of todos'</h2>
             <ul className={styles.list}>
                 {
-                    todo.map((todo) => <li key={todo.id}>
+                    todoList.map((todo) => <li key={todo.id}>
 
                         <Accordion>
                             <AccordionSummary>
@@ -60,10 +63,10 @@ const MainTodo = () => {
                                 </Typography>
                             </AccordionDetails>
                             <div className={styles.buttonsTodo}>
-                                <Button onClick={onEdit(todo)} className={styles.editButton} variant="outlined">
+                                <Button className={styles.editButton} variant="outlined">
                                     Edit
                                 </Button>
-                                <Button className={styles.doneButton} variant="outlined">
+                                <Button onClick={onToggle(todo)} className={styles.doneButton} variant="outlined">
                                     {todo.completed ? 'Back' : 'Done'}
                                 </Button>
                                 <Button onClick={onDelete(todo)} className={styles.deleteButton} variant="outlined"
