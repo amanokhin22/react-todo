@@ -6,8 +6,16 @@ import styles from '../../scss/home.module.scss'
 import {TextareaAutosize} from "@mui/material";
 import {useState} from "react";
 
+export interface FormPropsType {
+    onAddTodo: (data: AddTodoDTO) => void;
+}
 
-const AddTodoForm: React.FC = () => {
+export interface AddTodoDTO {
+    text: string;
+    title: string;
+}
+
+const AddTodoForm: React.FC<FormPropsType> = ({onAddTodo}) => {
      const [title, setTitle] = useState('')
      const [text, setText] = useState('')
 
@@ -24,6 +32,7 @@ const AddTodoForm: React.FC = () => {
      const handleClick = (event: React.UIEvent) => {
          event.preventDefault();
          console.log(title, text);
+         onAddTodo({text: text, title: title})
          setTitle('');
          setText('');
      }

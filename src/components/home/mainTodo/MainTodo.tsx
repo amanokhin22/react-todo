@@ -10,10 +10,10 @@ import {useEffect, useState} from "react";
 import axios from 'axios';
 
 export interface Todo {
-    userId: number,
+    userId?: number,
     id: number,
     title: string,
-    completed: boolean,
+    completed?: boolean,
     description: string
 }
 
