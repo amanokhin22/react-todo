@@ -6,45 +6,21 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
-import {useEffect, useState} from "react";
-import axios from 'axios';
 
 export interface Todo {
-    userId?: number,
-    id: number,
-    title: string,
-    completed?: boolean,
-    description: string
+    userId?: number;
+    id: number;
+    title: string;
+    completed?: boolean;
+    description: string;
+}
+export interface MainPropsType {
+    todoList: Todo[];
+    onToggle: (todo: Todo) => void;
+    onDelete: (todo: Todo) => void;
 }
 
-const MainTodo = () => {
-    const [todoList, setTodoList] = useState<Todo[]>([]);
-
-    useEffect(() => {
-        axios.get('http://localhost:3001/todo').then(res => {
-            console.log(res)
-            return setTodoList(res.data)
-        }).catch(error => {
-            console.log(error)
-        })
-    }, []);
-
-    const onDelete = (todo: Todo) => async () => {
-        console.log(todo)
-        await axios.delete(`http://localhost:3001/todo/${todo.id}`);
-        const res = await axios.get('http://localhost:3001/todo')
-        setTodoList(res.data);
-        //setTodoList(todoList.filter(t => t.id !== todo.id))
-        console.log(todo)
-    }
-
-    const onToggle = (todo: Todo) => async () => {
-        console.log(todo)
-        await axios.put(`http://localhost:3001/todo/${todo.id}`, {...todo, completed : !todo.completed  } );
-        const res = await axios.get('http://localhost:3001/todo')
-        setTodoList(res.data);
-    }
-
+const MainTodo: React.FC<MainPropsType> = ({todoList, onToggle, onDelete}) => {
 
     return (
         <div className={styles.main}>
@@ -66,16 +42,15 @@ const MainTodo = () => {
                                 <Button className={styles.editButton} variant="outlined">
                                     Edit
                                 </Button>
-                                <Button onClick={onToggle(todo)} className={styles.doneButton} variant="outlined">
+                                <Button onClick={() => onToggle(todo)} className={styles.doneButton} variant="outlined">
                                     {todo.completed ? 'Back' : 'Done'}
                                 </Button>
-                                <Button onClick={onDelete(todo)} className={styles.deleteButton} variant="outlined"
+                                <Button onClick={() => onDelete(todo)} className={styles.deleteButton} variant="outlined"
                                         startIcon={<DeleteIcon/>}>
                                     Delete
                                 </Button>
                             </div>
                         </Accordion>
-
                     </li>)
                 }
             </ul>
