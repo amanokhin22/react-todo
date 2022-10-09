@@ -14,6 +14,7 @@ export interface Todo {
     completed?: boolean;
     description: string;
 }
+
 export interface MainPropsType {
     todoList: Todo[];
     onToggle: (todo: Todo) => void;
@@ -31,7 +32,7 @@ const MainTodo: React.FC<MainPropsType> = ({todoList, onToggle, onDelete}) => {
 
                         <Accordion>
                             <AccordionSummary>
-                                <Typography> {todo.id} {todo.title}</Typography>
+                                <Typography> {todo.title}</Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>
@@ -45,7 +46,8 @@ const MainTodo: React.FC<MainPropsType> = ({todoList, onToggle, onDelete}) => {
                                 <Button onClick={() => onToggle(todo)} className={styles.doneButton} variant="outlined">
                                     {todo.completed ? 'Back' : 'Done'}
                                 </Button>
-                                <Button onClick={() => onDelete(todo)} className={styles.deleteButton} variant="outlined"
+                                <Button onClick={() => onDelete(todo)} className={styles.deleteButton}
+                                        variant="outlined"
                                         startIcon={<DeleteIcon/>}>
                                     Delete
                                 </Button>
