@@ -22,13 +22,12 @@ export interface MainPropsType {
 }
 
 const MainTodo: React.FC<MainPropsType> = ({todoList, onToggle, onDelete}) => {
-
     return (
         <div className={styles.main}>
             <h2>'The main list of todos'</h2>
             <ul className={styles.list}>
                 {
-                    todoList.map((todo) => <li key={todo.id}>
+                    todoList?.map((todo) => <li key={todo.id}>
 
                         <Accordion>
                             <AccordionSummary>
@@ -59,5 +58,4 @@ const MainTodo: React.FC<MainPropsType> = ({todoList, onToggle, onDelete}) => {
         </div>
     )
 }
-
 export default MainTodo

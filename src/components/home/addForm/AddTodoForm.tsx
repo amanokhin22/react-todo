@@ -3,8 +3,8 @@ import TextField from '@mui/material/TextField';
 import SendIcon from '@mui/icons-material/Send';
 import Button from '@mui/material/Button';
 import styles from '../../scss/home.module.scss'
-import {TextareaAutosize} from "@mui/material";
-import {useState} from "react";
+import {TextareaAutosize} from '@mui/material';
+import {useState} from 'react';
 
 export interface FormPropsType {
     onAddTodo: (data: AddTodoDTO) => void;
@@ -33,7 +33,6 @@ const AddTodoForm: React.FC<FormPropsType> = ({onAddTodo}) => {
         setTitle('');
         setText('');
     }
-
     return (
         <div className={styles.box}>
             <div>
@@ -55,5 +54,4 @@ const AddTodoForm: React.FC<FormPropsType> = ({onAddTodo}) => {
         </div>
     )
 }
-
 export default AddTodoForm;

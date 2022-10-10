@@ -1,6 +1,5 @@
 import {AddTodoDTO} from "../components/home/addForm/AddTodoForm";
 import axios from "axios";
-import {useEffect, useState} from "react";
 import {Todo} from "../components/home/mainTodo/MainTodo";
 
 const axiosInstance = axios.create({
@@ -11,33 +10,22 @@ const axiosInstance = axios.create({
     }
 });
 
-export const ApiTodos = () => {
-    const [todoList, setTodoList] = useState<Todo[]>([]);
+export const apiTodo = {
+    async getAll() {
+        const res = await axiosInstance.get('');
+        return res.data
+    },
 
-    useEffect(() => {
-        axiosInstance.get('').then(res => {
-            return setTodoList(res.data)
-        })
-    }, []);
-
-    const addTodoHandler = async (data: AddTodoDTO) => {
-        //await axiosInstance.create(data)
-        //const res = await apiTodo.getAll()
+    async create(data: AddTodoDTO) {
         await axiosInstance.post('', data);
-        const res = await axiosInstance.get('')
-        setTodoList(res.data);
-    }
+    },
 
-    const onDelete = async (todo: Todo) => {
+    async delete(todo: Todo) {
         await axiosInstance.delete(`/${todo.id}`);
-        const res = await axiosInstance.get('')
-        setTodoList(res.data);
-        //setTodoList(todoList.filter(t => t.id !== todo.id))
-    }
+    },
 
-    const onToggle = async (todo: Todo) => {
+    async put(todo: Todo) {
         await axiosInstance.put(`/${todo.id}`, {...todo, completed: !todo.completed});
-        const res = await axiosInstance.get('')
-        setTodoList(res.data);
-    }
+    },
 }
+
