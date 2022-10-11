@@ -5,77 +5,77 @@
       "id": 5,
       "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
       "completed": true,
-      "description": "Aequam memento rebus in arduis servare mentem"
+      "text": "Aequam memento rebus in arduis servare mentem"
     },
     {
       "userId": 1,
       "id": 6,
       "title": "qui ullam ratione quibusdam voluptatem quia omnis",
       "completed": false,
-      "description": "Aequum est neminem cum alterius detrimento et injuria fieri locupletiorem"
+      "text": "Aequum est neminem cum alterius detrimento et injuria fieri locupletiorem"
     },
     {
       "userId": 1,
       "id": 7,
       "title": "illo expedita consequatur quia in",
       "completed": false,
-      "description": "Aliena vitia in oculis habemus, a tergo nostra sunt"
+      "text": "Aliena vitia in oculis habemus, a tergo nostra sunt"
     },
     {
       "userId": 1,
       "id": 8,
       "title": "quo adipisci enim quam ut ab",
       "completed": true,
-      "description": "Amantes non vident. Videntes non amant."
+      "text": "Amantes non vident. Videntes non amant."
     },
     {
       "userId": 1,
       "id": 9,
       "title": "molestiae perspiciatis ipsa",
       "completed": false,
-      "description": "Bona opinio homini tuttior pecunia est"
+      "text": "Bona opinio homini tuttior pecunia est"
     },
     {
       "userId": 1,
       "id": 10,
       "title": "illo est ratione doloremque quia maiores aut",
       "completed": true,
-      "description": "Bonum vinum laetificat cor hominus"
+      "text": "Bonum vinum laetificat cor hominus"
     },
     {
       "userId": 1,
       "id": 11,
       "title": "vero rerum temporibus dolor",
       "completed": true,
-      "description": "Corruptissima re publica plurimae leges "
+      "text": "Corruptissima re publica plurimae leges "
     },
     {
       "userId": 1,
       "id": 12,
       "title": "ipsa repellendus fugit nisi",
       "completed": true,
-      "description": "Cujusvis hominis est errare, nullius nisi insipientis in errore perseverare"
+      "text": "Cujusvis hominis est errare, nullius nisi insipientis in errore perseverare"
     },
     {
       "userId": 1,
       "id": 13,
       "title": "et doloremque nulla",
       "completed": false,
-      "description": "Damnant quod non intellegunt"
+      "text": "Damnant quod non intellegunt"
     },
     {
       "userId": 1,
       "id": 14,
       "title": "repellendus sunt dolores architecto voluptatum",
       "completed": true,
-      "description": "Dixi et animam levavi"
+      "text": "Dixi et animam levavi"
     },
     {
       "userId": 1,
       "id": 15,
       "title": "ab voluptatum amet voluptas",
       "completed": true,
-      "description": "Ejus est nolle qui potest velle"
+      "text": "Ejus est nolle qui potest velle"
     },
     {
       "userId": 1,
@@ -288,9 +288,24 @@
       "completed": true
     },
     {
-      "text": "wdqdq",
-      "title": "fewfwefwfwf",
+      "text": "Каждому человеку свойственно заблуждаться, но оставаться при заблуждении никому не следует, кроме безрассудного.",
+      "title": "Cujusvis hominis est errare, nullius nisi insipientis in errore perseverare",
       "id": 51
+    },
+    {
+      "text": " Бремя доказательства лежит на том, кто утверждает, а не на том, кто отрицает.",
+      "title": "Ei incumbit probatio, qui dicit, non qui negat ",
+      "id": 52
+    },
+    {
+      "text": "Пусть погибнет мир, но восторжествует правосудие!",
+      "title": "Fiat iustitia, et pereat mundus! ",
+      "id": 53
+    },
+    {
+      "text": "Я сделал всё, что мог, кто может, пусть сделает лучше",
+      "title": "Feci quod potui, faciant meliora potentes ",
+      "id": 54
     }
   ]
 }

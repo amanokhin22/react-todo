@@ -12,7 +12,7 @@ export interface Todo {
     id: number;
     title: string;
     completed?: boolean;
-    description: string;
+    text: string;
 }
 
 export interface MainPropsType {
@@ -27,7 +27,7 @@ const MainTodo: React.FC<MainPropsType> = ({todoList, onToggle, onDelete}) => {
             <h2>'The main list of todos'</h2>
             <ul className={styles.list}>
                 {
-                    todoList?.map((todo) => <li key={todo.id}>
+                    todoList.map((todo) => <li key={todo.id}>
 
                         <Accordion>
                             <AccordionSummary>
@@ -35,7 +35,7 @@ const MainTodo: React.FC<MainPropsType> = ({todoList, onToggle, onDelete}) => {
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>
-                                    {todo.description}
+                                    {todo.text}
                                 </Typography>
                             </AccordionDetails>
                             <div className={styles.buttonsTodo}>
