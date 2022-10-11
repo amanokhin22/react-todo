@@ -4,15 +4,15 @@ import SendIcon from '@mui/icons-material/Send';
 import Button from '@mui/material/Button';
 import styles from '../../scss/home.module.scss'
 import {TextareaAutosize} from '@mui/material';
-import {useState} from 'react';
+import {useState} from "react";
 
 export interface FormPropsType {
     onAddTodo: (data: AddTodoDTO) => void;
 }
 
 export interface AddTodoDTO {
-    text: string;
     title: string;
+    text: string;
 }
 
 const AddTodoForm: React.FC<FormPropsType> = ({onAddTodo}) => {
@@ -37,7 +37,6 @@ const AddTodoForm: React.FC<FormPropsType> = ({onAddTodo}) => {
         <div className={styles.box}>
             <div>
                 <TextField value={title} onChange={handleChangeTitle} className={styles.input} label="Add title"/>
-
             </div>
             <div>
                 <TextareaAutosize value={text} onChange={handleChangeText} className={styles.description}

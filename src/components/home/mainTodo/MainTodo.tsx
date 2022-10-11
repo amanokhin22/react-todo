@@ -6,14 +6,8 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
+import {Todo} from "../../../types/todo.types";
 
-export interface Todo {
-    userId?: number;
-    id: number;
-    title: string;
-    completed?: boolean;
-    text: string;
-}
 
 export interface MainPropsType {
     todoList: Todo[];

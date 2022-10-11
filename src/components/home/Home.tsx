@@ -1,41 +1,42 @@
 import * as React from 'react';
 import AddTodoForm, {AddTodoDTO} from './addForm/AddTodoForm';
-import MainTodo, {Todo} from './mainTodo/MainTodo';
+import MainTodo from './mainTodo/MainTodo';
 import styles from '../scss/home.module.scss'
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 import {apiTodo} from '../../api/apiTodos';
+import {Todo} from "../../types/todo.types";
+import {useDispatch, useSelector} from "react-redux";
+import {RootState} from "../../redux/store";
+import {clearTodoList, setTodoList} from "../../redux/todoSlice";
+
 
 const Home: React.FC = () => {
 
-    const [todoList, setTodoList] = useState<Todo[]>([]);
+    const todoList = useSelector<RootState, Todo[]>(state => state.todo.todoList);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         apiTodo.getAll().then(res => {
-            console.log('home')
-            return setTodoList(res)
+            return dispatch(setTodoList(res))
         })
-    }, []);
+    }, [dispatch]);
 
     const addTodoHandler = async (data: AddTodoDTO) => {
         await apiTodo.create(data);
-        const res = await apiTodo.getAll()
-        console.log(data)
-        setTodoList(res);
+        dispatch(setTodoList(await apiTodo.getAll()))
     }
 
     const onDelete = async (todo: Todo) => {
         await apiTodo.delete(todo);
-        const res = await apiTodo.getAll();
-        console.log(todo)
-        setTodoList(res);
-        //setTodoList(todoList.filter(t => t.id !== todo.id))
+        dispatch(setTodoList(await apiTodo.getAll()))
     }
 
     const onToggle = async (todo: Todo) => {
         await apiTodo.put(todo);
-        const res = await apiTodo.getAll()
-        console.log(todo)
-        setTodoList(res);
+        dispatch(setTodoList(await apiTodo.getAll()))
+    }
+    const clearHandler = () => {
+        dispatch(clearTodoList())
     }
 
     return (
@@ -45,6 +46,9 @@ const Home: React.FC = () => {
             </div>
             <div>
                 <MainTodo todoList={todoList} onToggle={onToggle} onDelete={onDelete}/>
+                <button onClick={clearHandler}>
+                    Clear all
+                </button>
             </div>
         </div>
     )
