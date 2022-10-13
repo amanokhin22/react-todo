@@ -3,37 +3,39 @@ import AddTodoForm, {AddTodoDTO} from './addForm/AddTodoForm';
 import MainTodo from './mainTodo/MainTodo';
 import styles from '../scss/home.module.scss'
 import {useEffect} from 'react';
-import {apiTodo} from '../../api/apiTodos';
 import {Todo} from "../../types/todo.types";
-import {useDispatch, useSelector} from "react-redux";
-import {RootState} from "../../redux/store";
-import {clearTodoList, setTodoList} from "../../redux/todoSlice";
+import {useSelector} from "react-redux";
+import {RootState, useAppDispatch} from "../../redux/store";
+import {clearTodoList} from "../../redux/todoSlice";
+import {deleteTodo, fetchTodo, postTodo, putTodo} from "../../redux/asyncAction";
 
 
 const Home: React.FC = () => {
 
     const todoList = useSelector<RootState, Todo[]>(state => state.todo.todoList);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
+
 
     useEffect(() => {
-        apiTodo.getAll().then(res => {
-            return dispatch(setTodoList(res))
-        })
-    }, [dispatch]);
+        // apiTodo.getAll().then(res => {
+        //     return dispatch(setTodoList(res))
+        // }) Заменили getAll на тоже самое из санки
+        dispatch(fetchTodo());
+        //Или объявлять переменную внутри UseEffect или же создать переменную, которой присвоить useMemo. Также как-то можно применить useCallback
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const addTodoHandler = async (data: AddTodoDTO) => {
-        await apiTodo.create(data);
-        dispatch(setTodoList(await apiTodo.getAll()))
+        await dispatch(postTodo(data))
     }
+    //Заменили post и getAll на диспатч в асинхронном экшене, который содержит в себе и пост и гетОлл. Также и в других
 
     const onDelete = async (todo: Todo) => {
-        await apiTodo.delete(todo);
-        dispatch(setTodoList(await apiTodo.getAll()))
+        await dispatch(deleteTodo(todo));
     }
 
     const onToggle = async (todo: Todo) => {
-        await apiTodo.put(todo);
-        dispatch(setTodoList(await apiTodo.getAll()))
+        await dispatch(putTodo(todo));
     }
     const clearHandler = () => {
         dispatch(clearTodoList())

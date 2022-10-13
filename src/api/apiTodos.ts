@@ -13,7 +13,7 @@ const axiosInstance = axios.create({
 
 export const apiTodo = {
     async getAll() {
-        const res = await axiosInstance.get('');
+        const res = await axiosInstance.get<Todo[]>('');
         return res.data
     },
 

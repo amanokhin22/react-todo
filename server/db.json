@@ -211,12 +211,6 @@
     },
     {
       "userId": 2,
-      "id": 38,
-      "title": "totam quia non",
-      "completed": false
-    },
-    {
-      "userId": 2,
       "id": 39,
       "title": "doloremque quibusdam asperiores libero corrupti illum qui omnis",
       "completed": false
@@ -238,12 +232,6 @@
       "id": 42,
       "title": "rerum perferendis error quia ut eveniet",
       "completed": false
-    },
-    {
-      "userId": 3,
-      "id": 43,
-      "title": "tempore ut sint quis recusandae",
-      "completed": true
     },
     {
       "userId": 3,
@@ -306,11 +294,6 @@
       "text": "Я сделал всё, что мог, кто может, пусть сделает лучше",
       "title": "Feci quod potui, faciant meliora potentes ",
       "id": 54
-    },
-    {
-      "text": "ошщьд",
-      "title": "fewfwefwfwf",
-      "id": 55
     }
   ]
 }
