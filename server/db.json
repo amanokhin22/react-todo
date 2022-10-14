@@ -2,93 +2,80 @@
   "todo": [
     {
       "userId": 1,
-      "id": 1,
-      "title": "delectus aut autem",
-      "completed": false
-    },
-    {
-      "userId": 1,
-      "id": 2,
-      "title": "quis ut nam facilis et officia qui",
-      "completed": false
-    },
-    {
-      "userId": 1,
-      "id": 3,
-      "title": "fugiat veniam minus",
-      "completed": false
-    },
-    {
-      "userId": 1,
-      "id": 4,
-      "title": "et porro tempora",
-      "completed": true
-    },
-    {
-      "userId": 1,
       "id": 5,
       "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
-      "completed": false
+      "completed": true,
+      "text": "Aequam memento rebus in arduis servare mentem"
     },
     {
       "userId": 1,
       "id": 6,
       "title": "qui ullam ratione quibusdam voluptatem quia omnis",
-      "completed": false
+      "completed": false,
+      "text": "Aequum est neminem cum alterius detrimento et injuria fieri locupletiorem"
     },
     {
       "userId": 1,
       "id": 7,
       "title": "illo expedita consequatur quia in",
-      "completed": false
+      "completed": false,
+      "text": "Aliena vitia in oculis habemus, a tergo nostra sunt"
     },
     {
       "userId": 1,
       "id": 8,
       "title": "quo adipisci enim quam ut ab",
-      "completed": true
+      "completed": true,
+      "text": "Amantes non vident. Videntes non amant."
     },
     {
       "userId": 1,
       "id": 9,
       "title": "molestiae perspiciatis ipsa",
-      "completed": false
+      "completed": false,
+      "text": "Bona opinio homini tuttior pecunia est"
     },
     {
       "userId": 1,
       "id": 10,
       "title": "illo est ratione doloremque quia maiores aut",
-      "completed": true
+      "completed": true,
+      "text": "Bonum vinum laetificat cor hominus"
     },
     {
       "userId": 1,
       "id": 11,
       "title": "vero rerum temporibus dolor",
-      "completed": true
+      "completed": true,
+      "text": "Corruptissima re publica plurimae leges "
     },
     {
       "userId": 1,
       "id": 12,
       "title": "ipsa repellendus fugit nisi",
-      "completed": true
+      "completed": true,
+      "text": "Cujusvis hominis est errare, nullius nisi insipientis in errore perseverare"
     },
     {
       "userId": 1,
       "id": 13,
       "title": "et doloremque nulla",
-      "completed": false
+      "completed": false,
+      "text": "Damnant quod non intellegunt"
     },
     {
       "userId": 1,
       "id": 14,
       "title": "repellendus sunt dolores architecto voluptatum",
-      "completed": true
+      "completed": true,
+      "text": "Dixi et animam levavi"
     },
     {
       "userId": 1,
       "id": 15,
       "title": "ab voluptatum amet voluptas",
-      "completed": true
+      "completed": true,
+      "text": "Ejus est nolle qui potest velle"
     },
     {
       "userId": 1,
@@ -100,7 +87,7 @@
       "userId": 1,
       "id": 17,
       "title": "quo laboriosam deleniti aut qui",
-      "completed": true
+      "completed": false
     },
     {
       "userId": 1,
@@ -172,7 +159,7 @@
       "userId": 2,
       "id": 29,
       "title": "laborum aut in quam",
-      "completed": false
+      "completed": true
     },
     {
       "userId": 2,
@@ -224,12 +211,6 @@
     },
     {
       "userId": 2,
-      "id": 38,
-      "title": "totam quia non",
-      "completed": false
-    },
-    {
-      "userId": 2,
       "id": 39,
       "title": "doloremque quibusdam asperiores libero corrupti illum qui omnis",
       "completed": false
@@ -251,12 +232,6 @@
       "id": 42,
       "title": "rerum perferendis error quia ut eveniet",
       "completed": false
-    },
-    {
-      "userId": 3,
-      "id": 43,
-      "title": "tempore ut sint quis recusandae",
-      "completed": true
     },
     {
       "userId": 3,
@@ -299,6 +274,26 @@
       "id": 50,
       "title": "cupiditate necessitatibus ullam aut quis dolor voluptate",
       "completed": true
+    },
+    {
+      "text": "Каждому человеку свойственно заблуждаться, но оставаться при заблуждении никому не следует, кроме безрассудного.",
+      "title": "Cujusvis hominis est errare, nullius nisi insipientis in errore perseverare",
+      "id": 51
+    },
+    {
+      "text": " Бремя доказательства лежит на том, кто утверждает, а не на том, кто отрицает.",
+      "title": "Ei incumbit probatio, qui dicit, non qui negat ",
+      "id": 52
+    },
+    {
+      "text": "Пусть погибнет мир, но восторжествует правосудие!",
+      "title": "Fiat iustitia, et pereat mundus! ",
+      "id": 53
+    },
+    {
+      "text": "Я сделал всё, что мог, кто может, пусть сделает лучше",
+      "title": "Feci quod potui, faciant meliora potentes ",
+      "id": 54
     }
   ]
 }
