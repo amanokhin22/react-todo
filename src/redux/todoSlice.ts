@@ -2,11 +2,7 @@ import {createSlice} from '@reduxjs/toolkit';
 import type {PayloadAction} from "@reduxjs/toolkit";
 import {Todo} from "../types/todo.types";
 import {deleteTodo, fetchTodo, postTodo, putTodo} from "./asyncAction";
-
-export interface TodoState {
-    todoList: Todo[];
-    loading: boolean;
-}
+import {TodoState} from "./types";
 
 const initialState: TodoState = {
     todoList: [],

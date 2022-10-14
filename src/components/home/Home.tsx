@@ -5,14 +5,15 @@ import styles from '../scss/home.module.scss'
 import {useEffect} from 'react';
 import {Todo} from "../../types/todo.types";
 import {useSelector} from "react-redux";
-import {RootState, useAppDispatch} from "../../redux/store";
+import {useAppDispatch} from "../../redux/store";
 import {clearTodoList} from "../../redux/todoSlice";
 import {deleteTodo, fetchTodo, postTodo, putTodo} from "../../redux/asyncAction";
+import {selectTodoList} from "../../redux/selectors";
 
 
 const Home: React.FC = () => {
 
-    const todoList = useSelector<RootState, Todo[]>(state => state.todo.todoList);
+    const todoList = useSelector(selectTodoList);
     const dispatch = useAppDispatch();
 
 

@@ -25,7 +25,8 @@ const MainTodo: React.FC<MainPropsType> = ({todoList, onToggle, onDelete}) => {
 
                         <Accordion>
                             <AccordionSummary>
-                                <Typography> {todo.title}</Typography>
+                                <Typography> <del >{todo.title}</del>
+                                     </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>
@@ -33,9 +34,6 @@ const MainTodo: React.FC<MainPropsType> = ({todoList, onToggle, onDelete}) => {
                                 </Typography>
                             </AccordionDetails>
                             <div className={styles.buttonsTodo}>
-                                <Button className={styles.editButton} variant="outlined">
-                                    Edit
-                                </Button>
                                 <Button onClick={() => onToggle(todo)} className={styles.doneButton} variant="outlined">
                                     {todo.completed ? 'Back' : 'Done'}
                                 </Button>
