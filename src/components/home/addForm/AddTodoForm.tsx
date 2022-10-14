@@ -2,7 +2,7 @@ import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import SendIcon from '@mui/icons-material/Send';
 import Button from '@mui/material/Button';
-import styles from '../../scss/home.module.scss'
+import styles from '../../../scss/home.module.scss'
 import {TextareaAutosize} from '@mui/material';
 import {useState} from "react";
 

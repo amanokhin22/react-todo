@@ -1,7 +1,7 @@
 import * as React from 'react';
 import AddTodoForm, {AddTodoDTO} from './addForm/AddTodoForm';
 import MainTodo from './mainTodo/MainTodo';
-import styles from '../scss/home.module.scss'
+import styles from '../../scss/home.module.scss'
 import {useEffect} from 'react';
 import {Todo} from "../../types/todo.types";
 import {useSelector} from "react-redux";
