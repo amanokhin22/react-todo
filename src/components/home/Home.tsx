@@ -8,12 +8,12 @@ import {useSelector} from "react-redux";
 import {useAppDispatch} from "../../redux/store";
 import {clearTodoList} from "../../redux/todoSlice";
 import {deleteTodo, fetchTodo, postTodo, putTodo} from "../../redux/asyncAction";
-import {selectTodoList} from "../../redux/selectors";
+import {selectSortedTodoList} from "../../redux/selectors";
 
 
 const Home: React.FC = () => {
 
-    const todoList = useSelector(selectTodoList);
+    const todoList = useSelector(selectSortedTodoList);
     const dispatch = useAppDispatch();
 
 
