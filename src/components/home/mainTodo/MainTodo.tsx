@@ -1,8 +1,10 @@
 import * as React from 'react'
-import styles from '../../scss/home.module.scss'
+import styles from '../../../scss/home.module.scss'
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
+import Checkbox from '@mui/material/Checkbox';
+import FormControlLabel from '@mui/material/FormControlLabel';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -25,8 +27,13 @@ const MainTodo: React.FC<MainPropsType> = ({todoList, onToggle, onDelete}) => {
 
                         <Accordion>
                             <AccordionSummary>
-                                <Typography> <del >{todo.title}</del>
-                                     </Typography>
+                                <FormControlLabel control={<Checkbox/>} label={""}/>
+                                <Typography>
+                                    {todo.completed
+                                        ? <del className={styles.del}>{todo.title} </del>
+                                        : <ins className={styles.ins}>{todo.title} </ins>
+                                    }
+                                </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>

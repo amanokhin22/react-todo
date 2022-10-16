@@ -4,15 +4,8 @@
       "userId": 1,
       "id": 5,
       "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
-      "completed": true,
-      "text": "Aequam memento rebus in arduis servare mentem"
-    },
-    {
-      "userId": 1,
-      "id": 6,
-      "title": "qui ullam ratione quibusdam voluptatem quia omnis",
       "completed": false,
-      "text": "Aequum est neminem cum alterius detrimento et injuria fieri locupletiorem"
+      "text": "Aequam memento rebus in arduis servare mentem"
     },
     {
       "userId": 1,
@@ -60,7 +53,7 @@
       "userId": 1,
       "id": 13,
       "title": "et doloremque nulla",
-      "completed": false,
+      "completed": true,
       "text": "Damnant quod non intellegunt"
     },
     {
@@ -288,12 +281,19 @@
     {
       "text": "Пусть погибнет мир, но восторжествует правосудие!",
       "title": "Fiat iustitia, et pereat mundus! ",
-      "id": 53
+      "id": 53,
+      "completed": true
     },
     {
       "text": "Я сделал всё, что мог, кто может, пусть сделает лучше",
       "title": "Feci quod potui, faciant meliora potentes ",
       "id": 54
+    },
+    {
+      "text": "Ушла, утомлённая мужчинами, но всё ещё не удовлетворённая.",
+      "title": "Lassata viris necdum satiata recessit",
+      "id": 55,
+      "completed": true
     }
   ]
 }
